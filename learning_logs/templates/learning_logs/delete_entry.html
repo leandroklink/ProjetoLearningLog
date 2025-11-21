@@ -1,0 +1,30 @@
+{% extends "learning_logs/base.html" %}
+{% load bootstrap3 %}
+
+
+
+{% block header %}
+<h2>Tem certeza que deseja Excluir a anotação?</h2>
+
+{% endblock header %}
+
+{% block content %}
+
+<div class="panel-heading">
+    <h1>{{ entry.text|linebreaks }}</h1>
+</div>
+
+
+  <form method="post">
+    {% csrf_token %}
+
+    {% buttons %}
+    <button name="submit" class="btn btn-primary">Excluir</button>
+    {% endbuttons %}
+  </form>
+
+    {% buttons %}    
+  <a href="{% url 'topic' topic.id %}" class="btn btn-danger">Cancelar</a>
+    {% endbuttons %}
+
+{% endblock content %}

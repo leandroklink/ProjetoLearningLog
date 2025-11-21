@@ -1,0 +1,26 @@
+{% extends "learning_logs/base.html" %}
+{% load bootstrap3 %} <!-- Tag para conseguir usar o bootstrap na página -->
+
+
+{% block header%}
+<h2>Adicione um novo tópico: </h2>
+{% endblock header%}
+
+{% block content %}
+
+
+    <form action="{% url 'new_topic' %}" method = 'post' class="form">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+
+        {% buttons %}
+        <button name="submit" class="btn btn primary">Adicionar</button>
+        {% endbuttons %}
+        
+    </form>
+
+{% endblock content %}
+
+
+<!--{% csrf_token %} importante informar sempre ao criar um formulário para impedir de ataques hackers-->
+<!--{{ form.as_p }} o (as_p) serve para formatação do formulário-->

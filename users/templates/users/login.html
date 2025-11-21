@@ -1,0 +1,21 @@
+{% extends 'learning_logs/base.html' %}
+{% load bootstrap3 %} <!--elemento necessário de importar para usar as tags do bootstrap-->
+
+{% block header %}
+    <h2>Entre com sua conta de login.</h2>
+{% endblock header %}
+
+{% block content %}
+
+    <form action="{% url 'login' %}" method="post" class="form"> <!--Classe form é uma classe do bootstrap para estilização de formulários-->
+        {% csrf_token %}
+        <!--{{form.as_p}} (se não tivesse o bootstrap e o código abaixo)-->
+        {% bootstrap_form form %}
+
+        {% buttons %}
+            <button name="submit" class="btn btn-primary">Entrar</button> <!--class btn-primary também do bootstrap-->
+        {% endbuttons %}
+
+        <input type="hidden" name="next" value="{% url 'index' %}"> <!--essa view precisa de um input como next para mandar o usuário a página, no caso está sendo usado um hidden (oculto)-->
+    </form> 
+{% endblock content %}
