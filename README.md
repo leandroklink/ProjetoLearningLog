@@ -1,5 +1,8 @@
 # PROJETO PYTHON E DJANGO -- REGISTROS DE APRENDIZAGEM
 
+![Preview do Projeto](ProjetoDjango.PNG)
+
+
 Este é o meu primeiro projeto desenvolvido com Django. O trabalho foi
 realizado acompanhando as aulas do Jefferson Lobato:
 https://www.youtube.com/@JeffersonLobato
